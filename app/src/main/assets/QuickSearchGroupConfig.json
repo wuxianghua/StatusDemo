@@ -1,0 +1,103 @@
+[
+  {
+    "title": "公共服务",
+    "iconName": "ic_list_service",
+    "state": 1,
+    "child": [
+      {
+        "displayName": "管理室",
+        "searchKeyWord": "管理室",
+        "iconName": ""
+      },
+      {
+        "displayName": "仓库",
+        "searchKeyWord": "仓库",
+        "iconName": ""
+      },
+      {
+        "displayName": "配电间",
+        "searchKeyWord": "配电间",
+        "iconName": ""
+      },
+      {
+        "displayName": "设备间",
+        "searchKeyWord": "设备间",
+        "iconName": ""
+      },
+      {
+        "displayName": "机房",
+        "searchKeyWord": "机房",
+        "iconName": ""
+      }
+    ]
+  },
+  {
+    "title": "门诊科室",
+    "iconName": "ic_list_clinic",
+    "state": 1,
+    "child": [
+      {
+        "displayName": "内科",
+        "searchKeyWord": "内科",
+        "iconName": ""
+      },
+      {
+        "displayName": "外科",
+        "searchKeyWord": "外科",
+        "iconName": ""
+      },
+      {
+        "displayName": "儿科",
+        "searchKeyWord": "儿科",
+        "iconName": ""
+      },
+      {
+        "displayName": "妇科",
+        "searchKeyWord": "妇科",
+        "iconName": ""
+      },
+      {
+        "displayName": "心血管科",
+        "searchKeyWord": "心血管",
+        "iconName": ""
+      },
+      {
+        "displayName": "耳鼻喉科",
+        "searchKeyWord": "耳鼻",
+        "iconName": ""
+      },
+      {
+        "displayName": "肝病科",
+        "searchKeyWord": "肝病",
+        "iconName": ""
+      },
+      {
+        "displayName": "皮肤科",
+        "searchKeyWord": "皮肤",
+        "iconName": ""
+      },
+      {
+        "displayName": "肿瘤科",
+        "searchKeyWord": "肿瘤",
+        "iconName": ""
+      }
+    ]
+  },
+  {
+    "title": "医学影像",
+    "iconName": "ic_list_portrait",
+    "state": 1,
+    "child": [
+      {
+        "displayName": "B超",
+        "searchKeyWord": "B超",
+        "iconName": ""
+      },
+      {
+        "displayName": "CT",
+        "searchKeyWord": "CT",
+        "iconName": ""
+      }
+    ]
+  }
+]

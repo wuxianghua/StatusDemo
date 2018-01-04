@@ -1,0 +1,49 @@
+[
+  {
+    "title": "",
+    "iconName": "",
+    "state": 0,
+    "child": [
+      {
+        "displayName": "挂号",
+        "searchKeyWord": "挂号",
+        "iconName": "ic_search_hot_01"
+      },
+      {
+        "displayName": "缴费",
+        "searchKeyWord": "收费",
+        "iconName": "ic_search_hot_02"
+      },
+      {
+        "displayName": "取药",
+        "searchKeyWord": "药房",
+        "iconName": "ic_search_hot_03"
+      },
+      {
+        "displayName": "分诊",
+        "searchKeyWord": "分诊",
+        "iconName": "ic_search_hot_04"
+      },
+      {
+        "displayName": "抽血",
+        "searchKeyWord": "抽血",
+        "iconName": "ic_search_hot_05"
+      },
+      {
+        "displayName": "注射",
+        "searchKeyWord": "注射",
+        "iconName": "ic_search_hot_06"
+      },
+      {
+        "displayName": "ATM",
+        "searchKeyWord": "ATM",
+        "iconName": "ic_search_hot_07"
+      },
+      {
+        "displayName": "卫生间",
+        "searchKeyWord": "洗手间",
+        "iconName": "ic_search_hot_08"
+      }
+    ]
+  }
+]

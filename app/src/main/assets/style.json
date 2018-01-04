@@ -1,0 +1,269 @@
+{
+    "version": 8,
+    "name": "mapbox parking",
+    "glyphs": "http://palmap-source.oss-cn-shanghai.aliyuncs.com/fonts/{fontstack}/{range}.pbf",
+    "light": {
+        "anchor": "viewport",
+        "color": "white",
+        "intensity": 0.4
+    },
+    "sources": {
+        "dataSource": {
+            "type": "vector",
+            "url": 
+                "http://palmap-source.oss-cn-shanghai.aliyuncs.com/maps/04KI01B01/tilejson.json"
+        }
+    },
+	"zoom": 16,
+	"center": [121.351664845347, 31.219916865131,20],
+    "layers": [
+        {
+            "id": "Frame",
+            "type": "fill-extrusion",
+            "source": "dataSource",
+            "source-layer": "frame",
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-extrusion-color": "#FBF1DC",
+                "fill-extrusion-height": 0.01
+            }
+        },
+        {
+            "id": "Area-Grass",
+            "type": "fill-extrusion",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "==",
+                "categoryid",
+                35002000
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-extrusion-color": "#CFEEBB",
+                "fill-extrusion-height": 0.02
+            }
+        },
+        {
+            "id": "Area-Lane",
+            "type": "fill-extrusion",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "in",
+                "categoryid",
+                17004000,
+                37001000,
+                37000000
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-extrusion-color": "#89919A",
+                "fill-extrusion-height": 0.02
+            }
+        },
+        {
+            "id": "Area-Tag-Line",
+            "type": "fill-extrusion",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "in",
+                "categoryid",
+                22086000,
+                22082000,
+                0
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-extrusion-color": "#FFFFFF",
+                "fill-extrusion-height": 0.03
+            }
+        },
+        {
+            "id": "Area-Car-Spot",
+            "type": "fill-extrusion",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "in",
+                "categoryid",
+                22001000,
+                22004000
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-extrusion-color": "#DEC181",
+                "fill-extrusion-height": 0.03
+            }
+        },
+        {
+            "id": "Area-Car-Spot-Line",
+            "type": "line",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "in",
+                "categoryid",
+                22001000,
+                22004000
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "line-color": "#ffffff",
+                "line-width": 0.5
+            }
+        },
+        {
+            "id": "Area-All",
+            "type": "fill-extrusion",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "in",
+                "categoryid",
+                23999000,
+                15000000,
+                24097000,
+                24091000,
+                23051000,
+                23000000,
+                23004000,
+                15026000,
+                33042000
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-extrusion-color": 
+                {
+                    "property":"categoryid",
+                    "stops":[
+                        [23999000, "#DFDFDF"],
+                        [23999000, "#E4F2F7"],
+                        [24097000, "#E1FFFF"],
+                        [24091000, "#F5E752"],
+                        [23051000, "#B6D0F1"],
+                        [23000000, "#B6D0F1"],
+                        [23004000, "#B6D0F1"],
+                        [15026000, "#B6D0F1"],
+                        [33042000, "#DEDEDE"]
+                    ]
+                },
+                "fill-extrusion-height":
+                {
+                    "property":"categoryid",
+                    "stops":[
+                        [23999000, 1.0],
+                        [23999000, 1.0],
+                        [24097000, 1.0],
+                        [24091000, 1.0],
+                        [23051000, 1.0],
+                        [23000000, 1.0],
+                        [23004000, 1.0],
+                        [15026000, 1.0],
+                        [33042000, 4.0]
+                    ]
+                }
+            }
+        },
+        {
+            "id": "Area-Other-Text",
+            "type": "symbol",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "!in",
+                "categoryid",
+                22001000,
+                22004000
+            ],
+            "layout": {
+                "text-field": "{display}",
+                "text-offset": [
+                    0,
+                    0
+                ],
+                "text-anchor": "center",
+                "text-size": 10,
+                "text-padding": 5
+            },
+            "paint": {
+                "text-color": "#333333"
+            }
+        },
+        {
+            "id": "Area-Car-Text",
+            "type": "symbol",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "in",
+                "categoryid",
+                22001000,
+                22004000
+            ],
+            "layout": {
+                "text-field": "{display}",
+                "text-offset": [
+                    0,
+                    0
+                ],
+                "text-anchor": "center",
+                "text-size": 8,
+                "text-padding": 5
+            },
+            "paint": {
+                "text-color": "#333333"
+            }
+        },
+        {
+            "id": "Area-Other-POIs",
+            "type": "fill-extrusion",
+            "source": "dataSource",
+            "source-layer": "area",
+            "filter": [
+                "!in",
+                "categoryid",
+                35002000,
+                17004000,
+                37001000,
+                37000000,
+                22086000,
+                22082000,
+                0,
+                22001000,
+                22004000,
+                23999000,
+                15000000,
+                24097000,
+                24091000,
+                23051000,
+                23000000,
+                23004000,
+                15026000,
+                33042000
+            ],
+            "layout": {
+                "visibility": "visible"
+            },
+            "paint": {
+                "fill-extrusion-color": "#FFFFFF",
+                "fill-extrusion-height": 0.01
+            }
+        }
+    ]
+}
