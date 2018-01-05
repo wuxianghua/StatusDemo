@@ -90,6 +90,7 @@ public class OperationMapImpl implements IOperationMap {
                 Point.fromCoordinates(Position.fromCoordinates(latLng.getLongitude(),latLng.getLatitude()))) // Boston Common Park
         );
         FeatureCollection featureCollection = FeatureCollection.fromFeatures(markerCoordinates);
+        geoJsonSource = (GeoJsonSource) mMapboxMap.getSource(markName+"-source");
         if (geoJsonSource == null) {
             geoJsonSource = new GeoJsonSource(markName+"-source", featureCollection);
             mMapboxMap.addSource(geoJsonSource);

@@ -17,16 +17,23 @@
         <com.mapbox.mapboxsdk.maps.MapView
             android:id="@+id/map_view"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
         </com.mapbox.mapboxsdk.maps.MapView>
         <RelativeLayout
+            android:id="@+id/show_start_end"
             android:layout_width="match_parent"
             android:layout_height="85dp"
+            android:visibility="gone"
             android:background="#9932B9AA">
             <ImageView
+                android:id="@+id/img_back"
                 android:layout_width="wrap_content"
                 android:layout_marginTop="12dp"
                 android:layout_marginLeft="10dp"
+                android:onClick="onClick"
                 android:layout_height="wrap_content"
                 android:src="@mipmap/ic_back"/>
             <LinearLayout
@@ -39,6 +46,7 @@
                 android:layout_marginRight="40dp"
                 android:background="#32B9AA"
                 android:padding="7dp"
+                android:onClick="onClick"
                 android:layout_height="37dp">
                 <TextView
                     android:layout_width="wrap_content"
@@ -77,7 +85,7 @@
                 android:text="取药窗口1-3"/>
         </RelativeLayout>
         <android.support.v7.widget.Toolbar
-            android:visibility="gone"
+            android:id="@+id/title_bar"
             android:layout_width="match_parent"
             android:layout_height="48dp"
             android:background="#32B9AA"
@@ -96,12 +104,13 @@
                 android:text="室内地图"/>
         </android.support.v7.widget.Toolbar>
         <LinearLayout
+            android:id="@+id/ll_search_input"
             android:layout_marginTop="5dp"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
             android:orientation="horizontal"
             android:onClick="search"
-            android:visibility="gone"
+            android:layout_below="@+id/title_bar"
             android:background="@drawable/bg_search_input"
             android:layout_width="match_parent"
             android:gravity="center_vertical"
@@ -181,8 +190,8 @@
             android:layout_marginBottom="15dp"
             android:layout_marginLeft="10dp"
             android:gravity="center"
-            android:background="@drawable/bg_search_input"
-            android:layout_above="@+id/end_point_info"/>
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_search_input"/>
 
         <LinearLayout
             android:id="@+id/end_point_info"
@@ -192,6 +201,7 @@
             android:layout_width="match_parent"
             android:layout_height="110dp"
             android:orientation="vertical"
+            android:visibility="gone"
             android:layout_marginBottom="5dp"
             android:background="@drawable/bg_search_input">
             <RelativeLayout
@@ -234,23 +244,29 @@
                     android:layout_alignParentBottom="true"
                     android:layout_toRightOf="@+id/category_name"
                     android:text="F3"/>
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_centerVertical="true"
-                    android:layout_marginRight="10dp"
-                    android:src="@mipmap/ic_go"
-                    android:layout_toLeftOf="@+id/go_here"/>
-                <TextView
+                <LinearLayout
                     android:id="@+id/go_here"
                     android:layout_width="wrap_content"
-                    android:text="去这里"
-                    android:textSize="15dp"
+                    android:orientation="horizontal"
                     android:layout_alignParentRight="true"
                     android:layout_centerVertical="true"
                     android:layout_marginRight="10dp"
-                    android:textColor="#32B9AA"
-                    android:layout_height="wrap_content" />
+                    android:onClick="onClick"
+                    android:layout_height="wrap_content">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginRight="10dp"
+                        android:src="@mipmap/ic_go"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:text="去这里"
+                        android:layout_gravity="center_vertical"
+                        android:textSize="15dp"
+                        android:textColor="#32B9AA"
+                        android:layout_height="wrap_content" />
+                </LinearLayout>
             </RelativeLayout>
             <View
                 android:layout_width="match_parent"
@@ -265,6 +281,38 @@
                 android:gravity="center"
                 android:text="发送位置给好友"
                 android:textColor="#32B9AA" />
+        </LinearLayout>
+        <LinearLayout
+            android:id="@+id/show_set_start"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="20dp"
+            android:padding="3dp"
+            android:visibility="gone"
+            android:layout_alignParentBottom="true"
+            android:background="@drawable/bg_search_input">
+            <TextView
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:background="@drawable/bg_search_input"
+                android:text="取消"
+                android:layout_height="match_parent"
+                />
+            <TextView
+                android:id="@+id/set_start"
+                android:layout_marginLeft="8dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:textColor="#ffffff"
+                android:background="@drawable/bg_set_start"
+                android:text="设为起点"
+                android:onClick="onClick"
+                android:layout_height="match_parent"
+                />
         </LinearLayout>
     </RelativeLayout>
 </LinearLayout>

@@ -211,6 +211,34 @@ public class FileUtils {
         return isSuccess;
     }
 
+    public static String loadFromAssets(Context context,String fileName) {
+        InputStream inputStream = null;
+        try {
+            AssetManager assets = context.getAssets();
+            inputStream = assets.open(fileName);
+            InputStreamReader reader = new InputStreamReader(inputStream, "UTF-8");
+            BufferedReader bufferedReader = new BufferedReader(reader);
+            StringBuilder builder = new StringBuilder();
+            String str;
+            while ((str = bufferedReader.readLine()) != null) {
+                builder.append(str);
+                builder.append("\n");
+            }
+            return builder.toString();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }finally {
+            if (inputStream != null) {
+                try {
+                    inputStream.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
+    }
+
     public static Bitmap getBitmapFromSd(String fileName) {
         return BitmapFactory.decodeFile(SDPATH + fileName);
     }
@@ -297,7 +325,7 @@ public class FileUtils {
         }
     }
 
-    public static void AppendFile2Sd(String filepath, String content) {
+    public static void appendFile2Sd(String filepath, String content) {
         FileOutputStream fout = null;
         try {
             fout = new FileOutputStream(filepath, true);

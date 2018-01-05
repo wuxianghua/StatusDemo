@@ -85,5 +85,4 @@ public class DeviceUtils {
 
         return macSerial;
     }
-
 }
